@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>확인 화면</title>
+</head>
+<body>
+	<ul>
+		<li>이름: [[${name}]]</li>
+		<li>나이: [[${age}]]세</li>
+		<li>생년월일: [[${birth}]]</li>
+		<li>생년월일: [[${#temporals.format(birth, 'yyyy-MM-dd')}]]</li>
+	</ul>
+</body>
+</html>
