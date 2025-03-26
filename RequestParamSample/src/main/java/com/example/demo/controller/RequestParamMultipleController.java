@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.form.SampleForm;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,19 +23,34 @@ public class RequestParamMultipleController {
     }
 
     // POST 및 URL(/confirm)
+//    @PostMapping("confirm")
+//    public String confirmView(Model model,
+//                              @RequestParam String name,
+//                              @RequestParam Integer age,
+//                              @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @RequestParam Date birth) {
+//        LocalDate birthLocalDate = birth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//
+//        // Model에 저장
+//        model.addAttribute("name", name);
+//        model.addAttribute("age", age);
+//        model.addAttribute("birth", birthLocalDate);
+//
+//        // 반환값으로 뷰 이름을 반환
+//        return "confirm";
+//    }
+
+    // POST 및 URL(/confirm)
     @PostMapping("confirm")
-    public String confirmView(Model model,
-                              @RequestParam String name,
-                              @RequestParam Integer age,
-                              @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @RequestParam Date birth) {
-        LocalDate birthLocalDate = birth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-        // Model에 저장
-        model.addAttribute("name", name);
-        model.addAttribute("age", age);
-        model.addAttribute("birth", birthLocalDate);
-
+    public String confirmView(SampleForm form) {
         // 반환값으로 뷰 이름을 반환
-        return "confirm";
+        return "confirm2";
     }
+
+
+
+
+
+
+
+
 }
